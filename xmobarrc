@@ -18,11 +18,12 @@ Config
         , Run Alsa "default" "Master" ["-t", "<volume>%<status>", "--", "-O", "", "-o", "[M]", "-C", "#c0caf5", "-c", "#f7768e"]
         , Run Com "sh" ["-c", "echo $(( $(cat /sys/class/backlight/amdgpu_bl2/brightness) * 100 / $(cat /sys/class/backlight/amdgpu_bl2/max_brightness) ))%"] "bright" 10
         , Run Com "sh" ["-c", "~/.config/xmonad/redshift-status.sh"] "redshift" 300
+        , Run Com "sh" ["-c", "if ip link show type wireguard >/dev/null 2>&1; then iface=$(ip -o link show type wireguard | awk -F: '{print $2}' | tr -d ' ' | head -1); echo \"<fc=#9ece6a>VPN $iface</fc>\"; else echo \"<fc=#565f89>VPN off</fc>\"; fi"] "vpn" 30
         , Run Kbd [("us", "🇺🇸"), ("ru", "🇷🇺")]
         , Run Date "%b %_d %H:%M" "date" 10
         , Run StdinReader
         ]
     , sepChar = "%"
     , alignSep = "}{"
-    , template = " %StdinReader% }{ %kbd% | <fn=1></fn> %redshift% | <fn=1></fn> %bright% | <fn=1></fn> %alsa:default:Master% | <fn=1></fn> %wlan0wi% | <fn=1></fn> %cpu% %cputemp% | <fn=1></fn> %memory% | <fn=1></fn> %disku% | <fn=1>%battery%</fn> | <fn=1></fn> %date% "
+    , template = " %StdinReader% }{ %kbd% | <fn=1></fn> %redshift% | <fn=1></fn> %bright% | <fn=1></fn> %alsa:default:Master% | <fn=1></fn> %wlan0wi% | <fn=1>󰖂</fn> %vpn% | <fn=1></fn> %cpu% %cputemp% | <fn=1></fn> %memory% | <fn=1></fn> %disku% | <fn=1>%battery%</fn> | <fn=1></fn> %date% "
     }
