@@ -1,9 +1,9 @@
 Config
-    { font = "xft:JetBrains Mono:size=10:antialias=true:hinting=true"
-    , additionalFonts = ["xft:JetBrainsMono Nerd Font:size=12:antialias=true:hinting=true"]
+    { font = "JetBrains Mono 14"
+    , additionalFonts = ["JetBrainsMono Nerd Font 16"]
     , bgColor = "#1a1b26"
     , fgColor = "#c0caf5"
-    , position = TopH 32
+    , position = TopH 64
     , lowerOnStart = True
     , hideOnStart = False
     , allDesktops = True
