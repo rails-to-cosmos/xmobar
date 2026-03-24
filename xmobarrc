@@ -3,20 +3,23 @@ Config
     , additionalFonts = ["JetBrainsMono Nerd Font Mono 24"]
     , bgColor = "#1a1b26"
     , fgColor = "#c0caf5"
-    , position = TopH 64
+    , position = TopHM 64 8 8 8 0
+    , border = FullB
+    , borderColor = "#282a36"
+    , borderWidth = 2
     , lowerOnStart = True
     , hideOnStart = False
     , allDesktops = True
     , persistent = True
     , commands =
         [ Run Cpu ["-t", "<total>%", "-L", "3", "-H", "50", "--normal", "#9ece6a", "--high", "#f7768e"] 10
-        , Run Com "sh" ["-c", "echo $(( $(cat /sys/class/hwmon/hwmon7/temp1_input) / 1000 ))C"] "cputemp" 10
+        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/cputemp-status.sh"] "cputemp" 10
         , Run Memory ["-t", "<usedratio>%", "-H", "80", "--high", "#f7768e"] 10
         , Run DiskU [("/", "<free>")] ["-L", "10", "-H", "50", "--low", "#f7768e"] 60
-        , Run BatteryP ["BAT1"] ["-t", "<acstatus> <left>%", "-L", "20", "-H", "80", "--low", "#f7768e", "--normal", "#e0af68", "--high", "#9ece6a", "--", "-O", "", "-o", "", "-i", ""] 30
+        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/battery-status.sh"] "battery" 30
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/wifi-status.sh"] "wifi" 30
         , Run Alsa "default" "Master" ["-t", "<volume>%<status>", "--", "-O", "", "-o", "[M]", "-C", "#c0caf5", "-c", "#f7768e"]
-        , Run Com "sh" ["-c", "b=$(( $(cat /sys/class/backlight/amdgpu_bl2/brightness) * 100 / $(cat /sys/class/backlight/amdgpu_bl2/max_brightness) )); if [ $b -lt 25 ]; then c='#565f89'; elif [ $b -lt 50 ]; then c='#888888'; elif [ $b -lt 75 ]; then c='#c0caf5'; else c='#e0af68'; fi; echo \"<fn=1><fc=$c></fc></fn>\""] "bright" 10
+        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/brightness-status.sh"] "bright" 10
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/gpu-status.sh"] "gpu" 10
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/redshift-status.sh"] "redshift" 300
         , Run Com "sh" ["-c", "iface=$(ip -o link show type wireguard 2>/dev/null | awk -F: '{print $2}' | tr -d ' ' | head -1); if [ -n \"$iface\" ]; then echo \"<fc=#9ece6a>$iface</fc>\"; else echo \"<fc=#565f89>off</fc>\"; fi"] "vpn" 30
@@ -27,5 +30,5 @@ Config
         ]
     , sepChar = "%"
     , alignSep = "}{"
-    , template = " %StdinReader% }{ %kbd% | %emacs% | %redshift% | %bright% | <fn=1></fn> %alsa:default:Master% | <fn=1></fn> %wifi% | <fn=1>󰖂</fn> %vpn% | <fn=1>󰺨</fn> %gpu% | <fn=1></fn> %cpu% %cputemp% | <fn=1></fn> %memory% | <fn=1></fn> %disku% | %battery% | <fn=1></fn> %date% "
+    , template = " %StdinReader% }{ %kbd% | %emacs% | %redshift% | %bright% | <fn=1></fn> %alsa:default:Master% | <fn=1></fn> %wifi% | <fn=1>󰖂</fn> %vpn% | %gpu% <fn=1></fn> %cpu% %cputemp% | <fn=1></fn> %memory% | <fn=1></fn> %disku% | %battery% | <fn=1></fn> %date% "
     }
