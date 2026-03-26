@@ -22,8 +22,9 @@ Config
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/brightness-status.sh"] "bright" 10
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/gpu-status.sh"] "gpu" 10
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/redshift-status.sh"] "redshift" 300
-        , Run Com "sh" ["-c", "iface=$(ip -o link show type wireguard 2>/dev/null | awk -F: '{print $2}' | tr -d ' ' | head -1); if [ -n \"$iface\" ]; then echo \"<fc=#B6E63E>$iface</fc>\"; else echo \"<fc=#525254>off</fc>\"; fi"] "vpn" 30
-        , Run Com "sh" ["-c", "s=$(cat /tmp/emacs-status 2>/dev/null); case $s in ready) echo '<fn=1><fc=#B6E63E></fc></fn>';; starting) echo '<fn=1><fc=#FFCC00></fc></fn>';; error) echo '<fn=1><fc=#E74C3C></fc></fn>';; *) echo '<fn=1><fc=#525254></fc></fn>';; esac"] "emacs" 10
+        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/vpn-status.sh"] "vpn" 30
+        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/theme-sync.sh"] "theme" 30
+        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/emacs-status.sh"] "emacs" 10
         , Run Kbd [("us", "EN"), ("ru", "RU")]
         , Run Date "%b %_d %H:%M" "date" 10
         , Run StdinReader
