@@ -13,18 +13,18 @@ Config
     , persistent = True
     , commands =
         [ Run Cpu ["-t", "<total>%", "-L", "3", "-H", "50", "--normal", "#B6E63E", "--high", "#E74C3C"] 10
-        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/cputemp-status.sh"] "cputemp" 10
+        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status cputemp"] "cputemp" 10
         , Run Memory ["-t", "<usedratio>%", "-H", "80", "--high", "#E74C3C"] 10
         , Run DiskU [("/", "<free>")] ["-L", "10", "-H", "50", "--low", "#E74C3C"] 60
-        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/battery-status.sh"] "bat" 30
-        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/wifi-status.sh"] "wifi" 30
-        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/volume-status.sh"] "vol" 10
-        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/brightness-status.sh"] "bright" 10
-        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/gpu-status.sh"] "gpu" 10
+        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status battery"] "bat" 30
+        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status wifi"] "wifi" 30
+        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status volume"] "vol" 10
+        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status brightness"] "bright" 10
+        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status gpu"] "gpu" 10
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/redshift-status.sh"] "redshift" 300
-        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/vpn-status.sh"] "vpn" 30
+        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status vpn"] "vpn" 30
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/theme-sync.sh"] "theme" 30
-        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/emacs-status.sh"] "emacs" 10
+        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status emacs"] "emacs" 10
         , Run Kbd [("us", "<fn=2>🇺🇸</fn>"), ("ru", "<fn=2>🇷🇺</fn>")]
         , Run Date "%b %_d %H:%M" "date" 10
         , Run StdinReader
