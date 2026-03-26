@@ -1,29 +1,29 @@
 Config
     { font = "JetBrains Mono 10"
     , additionalFonts = ["JetBrainsMono Nerd Font Mono 20"]
-    , bgColor = "#1a1b26"
-    , fgColor = "#c0caf5"
+    , bgColor = "#000000"
+    , fgColor = "#FFFFFF"
     , position = TopHM 32 8 8 8 0
     , border = FullB
-    , borderColor = "#282a36"
+    , borderColor = "#21252B"
     , borderWidth = 2
     , lowerOnStart = True
     , hideOnStart = False
     , allDesktops = True
     , persistent = True
     , commands =
-        [ Run Cpu ["-t", "<total>%", "-L", "3", "-H", "50", "--normal", "#9ece6a", "--high", "#f7768e"] 10
+        [ Run Cpu ["-t", "<total>%", "-L", "3", "-H", "50", "--normal", "#B6E63E", "--high", "#E74C3C"] 10
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/cputemp-status.sh"] "cputemp" 10
-        , Run Memory ["-t", "<usedratio>%", "-H", "80", "--high", "#f7768e"] 10
-        , Run DiskU [("/", "<free>")] ["-L", "10", "-H", "50", "--low", "#f7768e"] 60
+        , Run Memory ["-t", "<usedratio>%", "-H", "80", "--high", "#E74C3C"] 10
+        , Run DiskU [("/", "<free>")] ["-L", "10", "-H", "50", "--low", "#E74C3C"] 60
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/battery-status.sh"] "bat" 30
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/wifi-status.sh"] "wifi" 30
-        , Run Alsa "default" "Master" ["-t", "<volume>%<status>", "--", "-O", "", "-o", "[M]", "-C", "#c0caf5", "-c", "#f7768e"]
+        , Run Alsa "default" "Master" ["-t", "<volume>%<status>", "--", "-O", "", "-o", "[M]", "-C", "#FFFFFF", "-c", "#E74C3C"]
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/brightness-status.sh"] "bright" 10
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/gpu-status.sh"] "gpu" 10
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/redshift-status.sh"] "redshift" 300
-        , Run Com "sh" ["-c", "iface=$(ip -o link show type wireguard 2>/dev/null | awk -F: '{print $2}' | tr -d ' ' | head -1); if [ -n \"$iface\" ]; then echo \"<fc=#9ece6a>$iface</fc>\"; else echo \"<fc=#565f89>off</fc>\"; fi"] "vpn" 30
-        , Run Com "sh" ["-c", "s=$(cat /tmp/emacs-status 2>/dev/null); case $s in ready) echo '<fn=1><fc=#9ece6a></fc></fn>';; starting) echo '<fn=1><fc=#e0af68></fc></fn>';; error) echo '<fn=1><fc=#f7768e></fc></fn>';; *) echo '<fn=1><fc=#565f89></fc></fn>';; esac"] "emacs" 10
+        , Run Com "sh" ["-c", "iface=$(ip -o link show type wireguard 2>/dev/null | awk -F: '{print $2}' | tr -d ' ' | head -1); if [ -n \"$iface\" ]; then echo \"<fc=#B6E63E>$iface</fc>\"; else echo \"<fc=#525254>off</fc>\"; fi"] "vpn" 30
+        , Run Com "sh" ["-c", "s=$(cat /tmp/emacs-status 2>/dev/null); case $s in ready) echo '<fn=1><fc=#B6E63E></fc></fn>';; starting) echo '<fn=1><fc=#FFCC00></fc></fn>';; error) echo '<fn=1><fc=#E74C3C></fc></fn>';; *) echo '<fn=1><fc=#525254></fc></fn>';; esac"] "emacs" 10
         , Run Kbd [("us", "EN"), ("ru", "RU")]
         , Run Date "%b %_d %H:%M" "date" 10
         , Run StdinReader
