@@ -18,7 +18,7 @@ Config
         , Run DiskU [("/", "<free>")] ["-L", "10", "-H", "50", "--low", "#E74C3C"] 60
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/battery-status.sh"] "bat" 30
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/wifi-status.sh"] "wifi" 30
-        , Run Alsa "default" "Master" ["-t", "<volume>%<status>", "--", "-O", "", "-o", "[M]", "-C", "#FFFFFF", "-c", "#E74C3C"]
+        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/volume-status.sh"] "vol" 10
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/brightness-status.sh"] "bright" 10
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/gpu-status.sh"] "gpu" 10
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/redshift-status.sh"] "redshift" 300
@@ -31,5 +31,5 @@ Config
         ]
     , sepChar = "%"
     , alignSep = "}{"
-    , template = " %StdinReader% }{ %kbd% | %emacs% | %redshift% | %bright% | <fn=1></fn> %alsa:default:Master% | %wifi% | %vpn% | %gpu% <fn=1></fn> %cpu% %cputemp% | <fn=1></fn> %memory% | <fn=1></fn> %disku% | %bat% | <fn=1></fn> %date% "
+    , template = " %StdinReader% }{ %kbd% | %emacs% | %redshift% | %bright% | <fn=1></fn> %vol% | %wifi% | %vpn% | %gpu% <fn=1></fn> %cpu% %cputemp% | <fn=1></fn> %memory% | <fn=1></fn> %disku% | %bat% | <fn=1></fn> %date% "
     }
