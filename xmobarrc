@@ -1,6 +1,6 @@
 Config
     { font = "JetBrains Mono 10"
-    , additionalFonts = ["JetBrainsMono Nerd Font Mono 20"]
+    , additionalFonts = ["JetBrainsMono Nerd Font Mono 20", "Noto Color Emoji 12"]
     , bgColor = "#000000"
     , fgColor = "#FFFFFF"
     , position = TopHM 32 8 8 8 0
@@ -25,11 +25,11 @@ Config
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/vpn-status.sh"] "vpn" 30
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/theme-sync.sh"] "theme" 30
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/emacs-status.sh"] "emacs" 10
-        , Run Kbd [("us", "EN"), ("ru", "RU")]
+        , Run Kbd [("us", "<fn=2>🇺🇸</fn>"), ("ru", "<fn=2>🇷🇺</fn>")]
         , Run Date "%b %_d %H:%M" "date" 10
         , Run StdinReader
         ]
     , sepChar = "%"
     , alignSep = "}{"
-    , template = " %StdinReader% }{ %kbd% | %emacs% | %redshift% | %bright% | <fn=1></fn> %alsa:default:Master% | <fn=1></fn> %wifi% | <fn=1>󰖂</fn> %vpn% | %gpu% <fn=1></fn> %cpu% %cputemp% | <fn=1></fn> %memory% | <fn=1></fn> %disku% | %bat% | <fn=1></fn> %date% "
+    , template = " %StdinReader% }{ %kbd% | %emacs% | %redshift% | %bright% | <fn=1></fn> %alsa:default:Master% | %wifi% | %vpn% | %gpu% <fn=1></fn> %cpu% %cputemp% | <fn=1></fn> %memory% | <fn=1></fn> %disku% | %bat% | <fn=1></fn> %date% "
     }
