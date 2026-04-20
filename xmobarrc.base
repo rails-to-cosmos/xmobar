@@ -32,5 +32,5 @@ Config
         ]
     , sepChar = "%"
     , alignSep = "}{"
-    , template = " %StdinReader% }{ %kbd% | %cam% | %emacs% | %redshift% | %bright% | <fn=1></fn> %vol% | %wifi% | %vpn% | %gpu% <fn=1></fn> %cpu% %cputemp% | <fn=1></fn> %memory% | <fn=1></fn> %disku% | %bat% | <fn=1></fn> %date% "
+    , template = " %StdinReader% }{ %kbd% | %cam% | %emacs% | %bright% | <fn=1></fn> %vol% | %wifi% | %vpn% | %gpu% <fn=1></fn> %cpu% %cputemp% | <fn=1></fn> %memory% | <fn=1></fn> %disku% | %bat% | <fn=1></fn> %date% "
     }
