@@ -17,6 +17,7 @@ Config
         , Run Memory ["-t", "<usedratio>%", "-H", "80", "--high", "#E74C3C"] 10
         , Run DiskU [("/", "<free>")] ["-L", "10", "-H", "50", "--low", "#E74C3C"] 60
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status battery"] "bat" 30
+        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status power"] "power" 30
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status wifi"] "wifi" 30
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status volume"] "vol" 10
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status brightness"] "bright" 10
