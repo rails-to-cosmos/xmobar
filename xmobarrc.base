@@ -1,11 +1,11 @@
 Config
     { font = "JetBrains Mono 10"
     , additionalFonts = ["JetBrainsMono Nerd Font Mono 20", "Noto Color Emoji 12"]
-    , bgColor = "#FFFFFF"
-    , fgColor = "#000000"
+    , bgColor = "#000000"
+    , fgColor = "#FFFFFF"
     , position = TopHM 32 8 8 8 0
     , border = FullB
-    , borderColor = "#C0C5CF"
+    , borderColor = "#21252B"
     , borderWidth = 2
     , lowerOnStart = True
     , hideOnStart = False
@@ -33,5 +33,5 @@ Config
         ]
     , sepChar = "%"
     , alignSep = "}{"
-    , template = " %StdinReader% }{ %kbd% | %cam% | %emacs% | %bright% | <fn=1></fn> %vol% | %wifi% | %vpn% | %gpu% <fn=1></fn> %cpu% %cputemp% | <fn=1></fn> %memory% | <fn=1></fn> %disku% | %bat% | <fn=1></fn> %date% "
+    , template = " %StdinReader% }{ %kbd% | %cam% | %emacs% | %bright% | <fn=1></fn> %vol% | %wifi% | %vpn% | %gpu% <fn=1></fn> %cpu% %cputemp% | <fn=1></fn> %memory% | <fn=1></fn> %disku% | %power% %bat% | <fn=1></fn> %date% "
     }
