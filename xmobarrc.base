@@ -1,6 +1,6 @@
 Config
     { font = "JetBrains Mono 10"
-    , additionalFonts = ["JetBrainsMono Nerd Font Mono 20", "Noto Color Emoji 12"]
+    , additionalFonts = ["JetBrainsMono Nerd Font Mono 20", "Noto Color Emoji 12", "JetBrains Mono Bold 10"]
     , bgColor = "#000000"
     , fgColor = "#FFFFFF"
     , position = TopHM 32 8 8 8 0
@@ -13,11 +13,11 @@ Config
     , persistent = True
     , commands =
         [ Run Cpu ["-t", "<total>%", "-L", "3", "-H", "50", "--normal", "#B6E63E", "--high", "#E74C3C"] 10
-        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status cputemp"] "cputemp" 10
+        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status cputemp"] "cputemp" 2
         , Run Memory ["-t", "<usedratio>%", "-L", "50", "-H", "80", "--low", "#B6E63E", "--normal", "#FFCC00", "--high", "#E74C3C"] 10
         , Run DiskU [("/", "<free>")] ["-L", "10", "-H", "50", "--low", "#E74C3C"] 60
-        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status battery"] "bat" 30
-        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status power"] "power" 30
+        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status battery"] "bat" 2
+        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status power"] "power" 2
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status wifi"] "wifi" 30
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status volume"] "vol" 10
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status brightness"] "bright" 10
@@ -26,7 +26,7 @@ Config
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status vpn"] "vpn" 30
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/theme-sync.sh"] "theme" 30
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status emacs"] "emacs" 10
-        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status camera"] "cam" 30
+        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status camera"] "cam" 2
         , Run Kbd [("us", "<fn=2>🇺🇸</fn>"), ("ru", "<fn=2>🇷🇺</fn>")]
         , Run Date "%b %_d %H:%M" "date" 10
         , Run StdinReader
