@@ -1,6 +1,6 @@
 Config
     { font = "JetBrains Mono 10"
-    , additionalFonts = ["JetBrainsMono Nerd Font Mono 20", "Noto Color Emoji 12", "JetBrains Mono Bold 10"]
+    , additionalFonts = ["JetBrainsMono Nerd Font Mono 20", "Noto Color Emoji 12", "JetBrains Mono Bold 10", "JetBrainsMono Nerd Font Mono 18"]
     , bgColor = "#000000"
     , fgColor = "#FFFFFF"
     , position = TopHM 32 8 8 8 0
