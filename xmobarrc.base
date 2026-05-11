@@ -1,6 +1,6 @@
 Config
     { font = "JetBrains Mono 10"
-    , additionalFonts = ["JetBrainsMono Nerd Font Mono 20", "Noto Color Emoji 12", "JetBrains Mono Bold 10", "JetBrainsMono Nerd Font Mono 18"]
+    , additionalFonts = ["JetBrainsMono Nerd Font Mono 20", "Noto Color Emoji 12", "JetBrains Mono Bold 10", "JetBrainsMono Nerd Font Mono Thin 18", "JetBrainsMono Nerd Font Mono 14"]
     , bgColor = "#000000"
     , fgColor = "#FFFFFF"
     , position = TopHM 32 8 8 8 0
@@ -15,7 +15,7 @@ Config
         [ Run Cpu ["-t", "<total>%", "-L", "3", "-H", "50", "--normal", "#B6E63E", "--high", "#E74C3C"] 10
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status cputemp"] "cputemp" 5
         , Run Memory ["-t", "<usedratio>%", "-L", "50", "-H", "80", "--low", "#B6E63E", "--normal", "#FFCC00", "--high", "#E74C3C"] 10
-        , Run DiskU [("/", "<free>")] ["-L", "10", "-H", "50", "--low", "#E74C3C"] 60
+        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status disk"] "disk" 60
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status battery"] "bat" 5
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status power"] "power" 5
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status wifi"] "wifi" 30
@@ -33,5 +33,5 @@ Config
         ]
     , sepChar = "%"
     , alignSep = "}{"
-    , template = " %StdinReader% }{ %kbd% | %cam% | %emacs% | %bright% | <fn=1></fn> %vol% | %wifi% | %vpn% | %gpu% <fn=1></fn> %cpu% %cputemp% | <fn=1>󰍛</fn> %memory% | <fn=1></fn> %disku% | %bat% %power% | <fn=1></fn> %date% "
+    , template = " %StdinReader% }{ %kbd% | %cam% | %emacs% | %bright% | <fn=1></fn> %vol% | %wifi% | %vpn% | %gpu% <fn=1></fn> %cpu% %cputemp% | <fn=1>󰍛</fn> %memory% | <fn=1></fn> %disk% | %bat% %power% | <fn=1></fn> %date% "
     }
