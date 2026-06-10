@@ -18,6 +18,7 @@ Config
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status disk"] "disk" 60
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status battery"] "bat" 5
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status power"] "power" 5
+        , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status powerprofile"] "pprofile" 15
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status wifi"] "wifi" 30
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status volume"] "vol" 10
         , Run Com "sh" ["-c", "~/.config/xmonad/scripts/xmobar-status brightness"] "bright" 10
@@ -34,5 +35,5 @@ Config
         ]
     , sepChar = "%"
     , alignSep = "}{"
-    , template = " %StdinReader% }{ %tray% | %kbd% | %cam% | %emacs% | %bright% | <fn=1></fn> %vol% | %wifi% | %vpn% | %gpu% <fn=1></fn> %cpu% %cputemp% | <fn=4></fn> %memory% | <fn=1></fn> %disk% | %bat% %power% | %date% "
+    , template = " %StdinReader% }{ %tray% | %kbd% | %cam% | %emacs% | %bright% | <fn=1></fn> %vol% | %wifi% | %vpn% | %gpu% <fn=1></fn> %cpu% %cputemp% | <fn=4></fn> %memory% | <fn=1></fn> %disk% | %pprofile% %bat% %power% | %date% "
     }
